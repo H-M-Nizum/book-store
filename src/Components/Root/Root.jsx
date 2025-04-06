@@ -1,13 +1,14 @@
 import React from "react";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
+import { Outlet } from "react-router";
 
 const Root = () => {
   return (
     <div>
-      <h3 className="text-3xl font-bold underline text-red-700">
-        This is Root For Test
-      </h3>
-      <br />
-      <button className="btn btn-dash">Daisy Test Button</button>
+      <Navbar />
+      <Outlet />
+      <Footer />
     </div>
   );
 };
