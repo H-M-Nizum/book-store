@@ -1,8 +1,21 @@
 import React from "react";
 
 const Navbar = () => {
+  const link = (
+    <>
+      <li>
+        <a>Home</a>
+      </li>
+      <li>
+        <a>Listed Books</a>
+      </li>
+      <li>
+        <a>Pages to Read</a>
+      </li>
+    </>
+  );
   return (
-    <div className="navbar bg-neutral text-neutral-content">
+    <div className="navbar bg-base-300">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,52 +39,29 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            {link}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <h2 className="text-xl font-bold" style={{ color: "#131313" }}>
+          Book Store
+        </h2>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
-        </ul>
+        <ul className="menu menu-horizontal px-1">{link}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-ghost text-xl">Button</a>
+        <a
+          className="btn btn-ghost text-white rounded-md"
+          style={{ backgroundColor: "#23BE0A" }}
+        >
+          Sign In
+        </a>
+        <a
+          className="btn btn-ghost text-white rounded-md ml-2"
+          style={{ backgroundColor: "#59C6D2" }}
+        >
+          Sign Up
+        </a>
       </div>
     </div>
   );
