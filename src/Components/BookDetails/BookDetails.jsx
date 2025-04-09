@@ -1,7 +1,11 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router";
+import { ToastContainer, toast } from "react-toastify";
 
 const BookDetails = () => {
+  const ReadBook = () => toast("Congratulations! For Read This Book.");
+  const wishBook = () =>
+    toast("Best Of Luck And Best Wishess For Reading This Book!");
   const { bookId } = useParams();
   const id = parseInt(bookId);
   const data = useLoaderData();
@@ -56,13 +60,18 @@ const BookDetails = () => {
 
         <p>Click the button to listen on Spotiwhy app.</p>
         <div className="card-actions">
-          <button className="btn">Read</button>
+          <button className="btn" onClick={ReadBook}>
+            Read
+          </button>
+          <ToastContainer />
           <button
             className="btn btn-ghost text-white rounded-md ml-2"
             style={{ backgroundColor: "#59C6D2" }}
+            onClick={wishBook}
           >
             Wishlist
           </button>
+          <ToastContainer />
         </div>
       </div>
     </div>
