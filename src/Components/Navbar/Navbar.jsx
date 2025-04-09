@@ -2,21 +2,33 @@ import React from "react";
 import { NavLink } from "react-router";
 
 const Navbar = () => {
+  const navLinkStyle = ({ isActive }) =>
+    isActive
+      ? "text-[#23BE0A] font-semibold underline"
+      : "text-[#131313] hover:text-[#23BE0A]";
+
   const link = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/" className={navLinkStyle}>
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/books-list">Listed Books</NavLink>
+        <NavLink to="/books-list" className={navLinkStyle}>
+          Listed Books
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/dashboard">Pages to Read</NavLink>
+        <NavLink to="/dashboard" className={navLinkStyle}>
+          Pages to Read
+        </NavLink>
       </li>
     </>
   );
+
   return (
-    <div className="navbar  px-8">
+    <div className="navbar px-8">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -27,18 +39,17 @@ const Navbar = () => {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              {" "}
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
+              />
             </svg>
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
           >
             {link}
           </ul>
